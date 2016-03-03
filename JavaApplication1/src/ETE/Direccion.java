@@ -16,6 +16,13 @@ public class Direccion {
    private String municipio;
    private String telefono;
 
+    public Direccion(String calle, int numero, String municipio, String telefono) {
+        this.calle = calle;
+        this.numero = numero;
+        this.municipio = municipio;
+        this.telefono = telefono;
+    }
+
     Direccion(String sur_11, int i, String ecatepunk) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

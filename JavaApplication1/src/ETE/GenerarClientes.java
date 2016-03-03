@@ -5,8 +5,6 @@
  */
 package ETE;
 
-import java.util.logging.Logger;
-
 /**
  *
  * @author IVAN
@@ -16,7 +14,9 @@ import java.util.logging.Logger;
 public class GenerarClientes {
     
   public static Cliente[] obtenerClientes(){
-         Cliente clientes[] =new Cliente[3];
+   
+   
+    Cliente clientes[] =new Cliente[3];
 clientes[0]=new Cliente("Ana","Lopez", 20, 20000, 
         new Direccion("sur 11", 20, "Ecatepunk"));
 
@@ -25,10 +25,10 @@ clientes[1]=new Cliente("Pedo","Matinez", 45, 14000,
 
 clientes[2]=new Cliente("Laura","Gomez", 30, 70000, 
         new Direccion("R-1", 43, "Cloacalco"));
-                
-         return clientes;
-     }
+  return clientes;  
+    }
 }
+
 
     
 

@@ -18,6 +18,14 @@ public class Cliente {
    private float sueldo;
    private Direccion direccion;
 
+    public Cliente(String nombre, String aPaterno, int edad, float sueldo, Direccion direccion) {
+        this.nombre = nombre;
+        this.aPaterno = aPaterno;
+        this.edad = edad;
+        this.sueldo = sueldo;
+        this.direccion = direccion;
+    }
+
     Cliente(String ana, String lopez, int i, int i0, Direccion direccion) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
