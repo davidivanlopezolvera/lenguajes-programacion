@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package solucionExamen;
+package capitulo11.collections;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author T-101
  */
-public class pregunta {
+public class Pregunta {
     
-    String titulo; 
-    opcion opciones[];
-    boolean getTitulo;
+     private String titulo;
+     private ArrayList<Opcion> opciones; 
 
-    public pregunta(String titulo, opcion[] opciones) {
+    public Pregunta(String titulo, ArrayList<Opcion> opciones) {
         this.titulo = titulo;
         this.opciones = opciones;
     }
@@ -28,13 +29,11 @@ public class pregunta {
         this.titulo = titulo;
     }
 
-    public opcion[] getOpciones() {
+    public ArrayList<Opcion> getOpciones() {
         return opciones;
     }
 
-    public void setOpciones(opcion[] opciones) {
+    public void setOpciones(ArrayList<Opcion> opciones) {
         this.opciones = opciones;
     }
-    
-    
 }

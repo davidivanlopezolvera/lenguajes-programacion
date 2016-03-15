@@ -3,21 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package solucionExamen;
+package capitulo11.collections;
 
 /**
  *
  * @author T-101
  */
-public class pregunta {
+public class Opcion {
     
-    String titulo; 
-    opcion opciones[];
-    boolean getTitulo;
+    private String  titulo;
+  private boolean estatus;  
 
-    public pregunta(String titulo, opcion[] opciones) {
+    public Opcion(String titulo, boolean estatus) {
         this.titulo = titulo;
-        this.opciones = opciones;
+        this.estatus = estatus;
     }
 
     public String getTitulo() {
@@ -28,13 +27,12 @@ public class pregunta {
         this.titulo = titulo;
     }
 
-    public opcion[] getOpciones() {
-        return opciones;
+    public boolean isEstatus() {
+        return estatus;
     }
 
-    public void setOpciones(opcion[] opciones) {
-        this.opciones = opciones;
+    public void setEstatus(boolean estatus) {
+        this.estatus = estatus;
     }
-    
     
 }
