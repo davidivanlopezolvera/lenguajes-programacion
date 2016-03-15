@@ -26,16 +26,16 @@ public class GeneradorPreguntas {
     Opcion o4p2=new Opcion("pyongyang",false);
     
     ArrayList<Opcion> opciones=new ArrayList<Opcion>();
-    opciones.add(o1p2);
-    opciones.add(o2p2);
-    opciones.add(o3p2);
-    opciones.add(o4p2);
-    
-    ArrayList<Opcion> opcionesp2=new ArrayList<Opcion>();
     opciones.add(o1);
     opciones.add(o2);
     opciones.add(o3);
     opciones.add(o4);
+    
+    ArrayList<Opcion> opcionesp2=new ArrayList<Opcion>();
+    opcionesp2.add(o1p2);
+    opcionesp2.add(o2p2);
+    opcionesp2.add(o3p2);
+    opcionesp2.add(o4p2);
     
       Pregunta p1=new Pregunta("Capital de Rusia", opciones);
       Pregunta p2=new Pregunta("Capital de china", opcionesp2);

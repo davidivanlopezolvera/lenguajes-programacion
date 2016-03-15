@@ -80,6 +80,11 @@ public class TestBasico extends javax.swing.JFrame {
         radio3.setText("jRadioButton4");
 
         jButton1.setText("Checar Respuesta");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Ir a Siguiente Pregunta");
 
@@ -136,6 +141,14 @@ public class TestBasico extends javax.swing.JFrame {
     private void radio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_radio1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
