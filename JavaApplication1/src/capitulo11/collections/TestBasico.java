@@ -6,6 +6,7 @@
 package capitulo11.collections;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 /**
@@ -27,7 +28,7 @@ public class TestBasico extends javax.swing.JFrame {
         radios[2]=radio2; 
         radios[3]=radio3; 
         
-        ArrayList<Pregunta> preguntas= GeneradorPreguntas.obtenerTodasLasPreguntas(); 
+    preguntas= GeneradorPreguntas.obtenerTodasLasPreguntas(); 
         
         pregunta.setText(preguntas.get(0).getTitulo());  
         
@@ -82,6 +83,11 @@ public class TestBasico extends javax.swing.JFrame {
         buttonGroup1.add(radio2);
         radio2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         radio2.setText("jRadioButton3");
+        radio2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radio2ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(radio3);
         radio3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -128,9 +134,9 @@ public class TestBasico extends javax.swing.JFrame {
                 .addComponent(radio0)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(radio1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(radio2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(6, 6, 6)
                 .addComponent(radio3)
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -152,11 +158,17 @@ public class TestBasico extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+ boolean respuesta= GeneradorPreguntas.checarRespuesta(preguntas.get(0), radios); 
+ 
+ JOptionPane.showMessageDialog(rootPane, "Respuesta:"+respuesta);
         
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void radio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radio2ActionPerformed
 
     /**
      * @param args the command line arguments
