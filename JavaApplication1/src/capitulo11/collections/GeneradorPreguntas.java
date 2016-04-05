@@ -26,6 +26,11 @@ public class GeneradorPreguntas {
     Opcion o3p2=new Opcion("Seul",false);
     Opcion o4p2=new Opcion("pyongyang",false);
     
+    Opcion o1p3=new Opcion("Jalisco",false); 
+    Opcion o2p3=new Opcion("Ciudad de mexico",true);
+    Opcion o3p3=new Opcion("Guadalajara",false);
+    Opcion o4p3=new Opcion("Toluca",false);
+    
     ArrayList<Opcion> opciones=new ArrayList<Opcion>();
     opciones.add(o1);
     opciones.add(o2);
@@ -38,12 +43,20 @@ public class GeneradorPreguntas {
     opcionesp2.add(o3p2);
     opcionesp2.add(o4p2);
     
+    ArrayList<Opcion> opcionesp3=new ArrayList<Opcion>();
+    opcionesp3.add(o1p3);
+    opcionesp3.add(o2p3);
+    opcionesp3.add(o3p3);
+    opcionesp3.add(o4p3);
+            
       Pregunta p1=new Pregunta("Capital de Rusia", opciones);
       Pregunta p2=new Pregunta("Capital de china", opcionesp2);
+      Pregunta p3=new Pregunta("Capital de Mexico", opcionesp3);
       
       ArrayList<Pregunta> preguntas=new ArrayList<Pregunta>();
       preguntas.add(p1);
       preguntas.add(p2);
+      preguntas.add(p3);
       return preguntas;
       
     }
