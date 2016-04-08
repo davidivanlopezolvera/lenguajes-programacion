@@ -6,8 +6,11 @@
 package capitulo11.collections;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
+
 
 /**
  *
@@ -15,16 +18,18 @@ import javax.swing.JRadioButton;
  */
 public class TestBasico extends javax.swing.JFrame {
 
-    ArrayList<Pregunta> preguntas; 
+    ArrayList<Pregunta> preguntas;
     JRadioButton radios[]=new JRadioButton[4]; 
     int numero =0; 
-    int x=68; 
+    int x=60; 
     /**
      * Creates new form TestBasico
      */
     public TestBasico() {
+           preguntas=
+                GeneradorPreguntas.obtenerTodasLasPreguntas();
         initComponents();
-        
+
         Thread T1=new Thread(new Runnable() {
         
 
@@ -35,16 +40,21 @@ public class TestBasico extends javax.swing.JFrame {
                     if(x<=0)dispose();
                     etiquetaReloj.setText(""+x);
                     try{
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                     } catch (InterruptedException ex){
-                        logger.getLogger(TestBasico.class.getName()).log(Level.SEVER,NULL, EX); 
+                        Logger.getLogger(TestBasico.class.getName()).log(Level.SEVERE,null, ex); 
                     }
                 }
             }
         });
-        t1.start(); 
-        iniciarTodas();
-    }
+        
+        T1.start(); 
+             iniciarTodas();
+      
+        
+    
+}
+    
         
      
     /**
@@ -64,7 +74,7 @@ public class TestBasico extends javax.swing.JFrame {
         radio3 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        etiquetaReloj = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,7 +126,7 @@ public class TestBasico extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
+        etiquetaReloj.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,7 +150,7 @@ public class TestBasico extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)))
+                        .addComponent(etiquetaReloj)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -149,7 +159,7 @@ public class TestBasico extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pregunta)
-                    .addComponent(jLabel1))
+                    .addComponent(etiquetaReloj))
                 .addGap(18, 18, 18)
                 .addComponent(radio0)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -235,9 +245,9 @@ public class TestBasico extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel etiquetaReloj;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel pregunta;
     private javax.swing.JRadioButton radio0;
     private javax.swing.JRadioButton radio1;
@@ -245,24 +255,34 @@ public class TestBasico extends javax.swing.JFrame {
     private javax.swing.JRadioButton radio3;
     // End of variables declaration//GEN-END:variables
 
-public void iniciarTodas( ){
-     if(numero<preguntas.size()){
+public void iniciarTodas(){
     
-        radios[0]=radio0; 
-        radios[1]=radio1; 
-        radios[2]=radio2; 
-        radios[3]=radio3; 
+    if(numero<preguntas.size()){
+        radios[0]=radio0;
+        radios[1]=radio1;
+        radios[2]=radio2;
+        radios[3]=radio3;
+ preguntas=GeneradorPreguntas.obtenerTodasLasPreguntas();
+        pregunta.setText(preguntas.get(numero).getTitulo());
         
-    preguntas= GeneradorPreguntas.obtenerTodasLasPreguntas(); 
+        radio0.setText(preguntas
+                .get(numero).getOpciones()
+                .get(0).getTitulo());
         
-        pregunta.setText(preguntas.get(numero).getTitulo());  
+        radio1.setText(preguntas
+                .get(numero).getOpciones()
+                .get(1).getTitulo());
         
-        radio0.setText(preguntas.get(numero).getOpciones().get(0).getTitulo());
-        radio1.setText(preguntas.get(numero).getOpciones().get(1).getTitulo());
-        radio2.setText(preguntas.get(numero).getOpciones().get(2).getTitulo());
-        radio3.setText(preguntas.get(numero).getOpciones().get(3).getTitulo());
+        radio2.setText(preguntas
+                .get(numero).getOpciones()
+                .get(2).getTitulo());
+        
+        radio3.setText(preguntas
+                .get(numero).getOpciones()
+                .get(3).getTitulo()); 
+    }
 }
-}
+
 }
 
 
