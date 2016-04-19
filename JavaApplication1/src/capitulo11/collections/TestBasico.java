@@ -40,7 +40,7 @@ public class TestBasico extends javax.swing.JFrame {
                     if(x<=0)dispose();
                     etiquetaReloj.setText(""+x);
                     try{
-                        Thread.sleep(100);
+                        Thread.sleep(1000);
                     } catch (InterruptedException ex){
                         Logger.getLogger(TestBasico.class.getName()).log(Level.SEVERE,null, ex); 
                     }
